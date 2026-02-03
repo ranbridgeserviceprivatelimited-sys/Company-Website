@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ranbridgeserviceprivatelimited-sys.github.io/Company-Website/sitemap.xml
