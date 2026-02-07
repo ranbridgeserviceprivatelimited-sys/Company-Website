@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Facebook, Instagram, Linkedin, Phone, Twitter, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Phone, Twitter, Youtube, Menu, X } from "lucide-react";
 import { gsap } from "gsap";
 import { Link, useLocation } from "react-router-dom";
 
@@ -8,6 +8,7 @@ const Header: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isOnHero, setIsOnHero] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const iconsRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLDivElement>(null);
@@ -103,19 +104,18 @@ const Header: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* 🔝 SOCIAL + CONTACT */}
-        {/* 🔝 SOCIAL + CONTACT */}
-        <div ref={iconsRef} className="grid grid-cols-3 items-center px-28 mb-4">
-          <div className="flex gap-3">
+        <div ref={iconsRef} className="grid grid-cols-3 items-center px-4 md:px-28 mb-4">
+          <div className="flex gap-2 md:gap-3">
             <a
               href="https://www.facebook.com/profile.php?id=61578597456959"
               target="_blank"
               rel="noopener noreferrer"
               onMouseEnter={handleIconHover}
               onMouseLeave={handleIconLeave}
-              className={`p-2 rounded-full transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"
+              className={`p-1.5 md:p-2 rounded-full transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"
                 }`}
             >
-              <Facebook size={16} />
+              <Facebook size={6} className="md:size-6" />
             </a>
 
             <a
@@ -124,10 +124,10 @@ const Header: React.FC = () => {
               rel="noopener noreferrer"
               onMouseEnter={handleIconHover}
               onMouseLeave={handleIconLeave}
-              className={`p-2 rounded-full transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"
+              className={`p-1.5 md:p-2 rounded-full transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"
                 }`}
             >
-              <Linkedin size={16} />
+              <Linkedin size={6} className="md:size-6" />
             </a>
 
             <a
@@ -136,10 +136,10 @@ const Header: React.FC = () => {
               rel="noopener noreferrer"
               onMouseEnter={handleIconHover}
               onMouseLeave={handleIconLeave}
-              className={`p-2 rounded-full transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"
+              className={`p-1.5 md:p-2 rounded-full transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"
                 }`}
             >
-              <Instagram size={16} />
+              <Instagram size={6} className="md:size-6" />
             </a>
 
             <a
@@ -148,10 +148,10 @@ const Header: React.FC = () => {
               rel="noopener noreferrer"
               onMouseEnter={handleIconHover}
               onMouseLeave={handleIconLeave}
-              className={`p-2 rounded-full transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"
+              className={`p-1.5 md:p-2 rounded-full transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"
                 }`}
             >
-              <Twitter size={16} />
+              <Twitter size={6} className="md:size-6" />
             </a>
 
             <a
@@ -160,10 +160,10 @@ const Header: React.FC = () => {
               rel="noopener noreferrer"
               onMouseEnter={handleIconHover}
               onMouseLeave={handleIconLeave}
-              className={`p-2 rounded-full transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"
+              className={`p-1.5 md:p-2 rounded-full transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"
                 }`}
             >
-              <Youtube size={16} />
+              <Youtube size={6} className="md:size-6" />
             </a>
           </div>
 
@@ -172,21 +172,22 @@ const Header: React.FC = () => {
           <div className="flex justify-end">
             <a
               href="tel:+918247392437"
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"
+              className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"
                 }`}
             >
-              <Phone size={14} />
-              <span>+91 82473 92437</span>
+              <Phone size={6} className="md:size-6" />
+              <span className="hidden sm:inline">+91 82473 92437</span>
+              <span className="sm:hidden">Call</span>
             </a>
           </div>
         </div>
 
         {/* 🔽 NAVBAR */}
-        <div ref={navRef} className="bg-slate-900/80 backdrop-blur-md rounded-full shadow-lg shadow-blue-900/10 px-28 py-2 border border-slate-700/50">
+        <div ref={navRef} className="bg-slate-900/80 backdrop-blur-md rounded-full shadow-lg shadow-blue-900/10 px-4 md:px-28 py-2 border border-slate-700/50">
           <div ref={menuItemsRef} className="grid grid-cols-3 items-center">
 
-            {/* LEFT */}
-            <nav className="flex gap-24 text-sm font-semibold text-slate-200">
+            {/* DESKTOP LEFT */}
+            <nav className="hidden lg:flex gap-16 md:gap-20 lg:gap-24 text-sm font-semibold text-slate-200">
               {["/", "/about", "/services"].map((path, i) => {
                 const isActive = location.pathname === path;
                 return (
@@ -200,18 +201,28 @@ const Header: React.FC = () => {
               })}
             </nav>
 
+            {/* MOBILE MENU BUTTON */}
+            <div className="lg:hidden flex justify-start">
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={`p-2 rounded-full transition-colors ${isOnHero ? "bg-blue-600 text-white" : "bg-slate-800 text-blue-400 hover:bg-slate-700"}`}
+              >
+                {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+            </div>
+
             {/* LOGO */}
             <div className="flex justify-center">
               <img
                 ref={logoRef}
                 src="https://ik.imagekit.io/lg14qfjkg/RANBIDGE%20SOLUTIONS%20PRIVATE%20LIMITED.png"
                 alt="Ranbidge Logo"
-                className="h-20 object-contain brightness-0 invert"
+                className="h-12 md:h-16 lg:h-20 object-contain brightness-0 invert"
               />
             </div>
 
-            {/* RIGHT */}
-            <nav className="flex justify-end gap-20 text-sm font-semibold text-slate-200">
+            {/* DESKTOP RIGHT */}
+            <nav className="hidden lg:flex justify-end gap-16 md:gap-20 lg:gap-24 text-sm font-semibold text-slate-200">
               {["/domains", "/internship", "/contact"].map((path, i) => {
                 const isActive = location.pathname === path;
                 return (
@@ -225,8 +236,36 @@ const Header: React.FC = () => {
               })}
             </nav>
 
+            {/* MOBILE MENU PLACEHOLDER */}
+            <div className="lg:hidden flex justify-end" />
+
           </div>
         </div>
+
+        {/* MOBILE MENU */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 mt-2 mx-4 bg-slate-900/95 backdrop-blur-md rounded-2xl border border-slate-700/50 shadow-xl overflow-hidden">
+            <nav className="flex flex-col p-4 space-y-3">
+              {["/", "/about", "/services", "/domains", "/internship", "/contact"].map((path, i) => {
+                const isActive = location.pathname === path;
+                return (
+                  <Link
+                    key={i}
+                    to={path}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`px-4 py-3 rounded-lg transition-colors font-medium ${
+                      isActive
+                        ? "bg-blue-600 text-white"
+                        : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                    }`}
+                  >
+                    {path === "/" ? "Home" : path.replace("/", "").toUpperCase()}
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+        )}
 
       </div>
     </header>

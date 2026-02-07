@@ -71,26 +71,26 @@ const Services: React.FC = () => {
       ref={servicesRef}
       id="services"
       className="
-        relative pt-40 pb-24
+        relative pt-20 sm:pt-32 md:pt-40 pb-16 sm:pb-20 md:pb-24
         bg-transparent
         overflow-hidden
       "
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* HEADER */}
         <div
           ref={headerRef}
-          className="text-center max-w-3xl mx-auto mb-20"
+          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20"
         >
-          <h2 className="text-blue-600 font-semibold uppercase tracking-wider text-sm mb-4">
+          <h2 className="text-blue-600 font-semibold uppercase tracking-wider text-xs sm:text-sm mb-3 sm:mb-4">
             Core Services
           </h2>
-          <h3 className="text-4xl font-extrabold text-white mb-6">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 sm:mb-6">
             Comprehensive Support for Academic & Career Excellence
           </h3>
-          <p className="text-lg text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
             We provide structured, industry-aligned services that empower
-            students, institutions, and professionals to succeed in today’s
+            students, institutions, and professionals to succeed in today's
             competitive environment.
           </p>
         </div>
@@ -98,7 +98,7 @@ const Services: React.FC = () => {
         {/* SERVICE CARDS */}
         <div
           ref={cardsRef}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8"
         >
           {SERVICES.map((service, index) => {
             const colorSchemes = [
@@ -116,7 +116,7 @@ const Services: React.FC = () => {
               key={index}
               className="
                 bg-slate-900/50 backdrop-blur
-                p-8
+                p-6 sm:p-8
                 rounded-2xl
                 border border-slate-700
                 shadow-sm
@@ -130,10 +130,10 @@ const Services: React.FC = () => {
                 className={`
                   ${colors.bg}
                   ${colors.text}
-                  w-14 h-14
+                  w-12 h-12 sm:w-14 sm:h-14
                   rounded-2xl
                   flex items-center justify-center
-                  mb-6
+                  mb-4 sm:mb-6
                   ${colors.hoverBg}
                   group-hover:text-white
                   transition-colors
@@ -142,11 +142,11 @@ const Services: React.FC = () => {
                 {service.icon}
               </div>
 
-              <h4 className="text-xl font-bold text-white mb-3">
+              <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
                 {service.title}
               </h4>
 
-              <p className="text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
                 {service.description}
               </p>
             </div>
@@ -157,22 +157,22 @@ const Services: React.FC = () => {
         <div
           ref={partnershipRef}
           className="
-            mt-20
-            p-12
+            mt-12 sm:mt-16 md:mt-20
+            p-8 sm:p-12
             bg-slate-900/50 backdrop-blur
             border border-slate-700
-            rounded-3xl
-            flex flex-col md:flex-row
-            items-center justify-between gap-10
+            rounded-2xl sm:rounded-3xl
+            flex flex-col lg:flex-row
+            items-center justify-between gap-6 sm:gap-8 lg:gap-10
             shadow-sm hover:shadow-md
             transition-all
           "
         >
-          <div className="max-w-xl">
-            <h4 className="text-2xl font-bold text-white mb-3">
+          <div className="max-w-xl text-center lg:text-left">
+            <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">
               Research Paper Writing & Publication Support
             </h4>
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
               We assist students and faculty with research idea formulation,
               paper drafting, plagiarism correction, formatting, and submission
               guidance for IEEE, Scopus, and UGC-approved journals.
@@ -182,7 +182,7 @@ const Services: React.FC = () => {
           <a
             href="/contact"
             className="
-              px-8 py-3
+              px-6 sm:px-8 py-3
               bg-blue-600
               text-white
               font-semibold
@@ -190,7 +190,7 @@ const Services: React.FC = () => {
               hover:bg-blue-700
               hover:scale-105
               transition-all
-              whitespace-nowrap
+              whitespace-nowrap text-sm sm:text-base
             "
           >
             Get Publication Support

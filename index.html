@@ -22,6 +22,33 @@
       scroll-behavior: smooth;
     }
 
+    /* Hide scrollbars globally */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+    
+    ::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+    
+    /* Firefox */
+    * {
+      scrollbar-width: none;
+    }
+    
+    /* IE and Edge */
+    * {
+      -ms-overflow-style: none;
+    }
+
     .font-brand {
       font-family: 'Syne', sans-serif;
     }

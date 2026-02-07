@@ -1,6 +1,7 @@
 import Hero from "./Hero";
 import HomeIntro from "./HomeIntro";
 import HomeServices from "./HomeServices";
+import HRCard from "./HRCard";
 import TechStack from "./TechStack";
 import Process from "./Process";
 import HomeProjects from "./HomeProjects";
@@ -12,6 +13,7 @@ const Home = () => {
       <Hero />
       <HomeIntro />
       <HomeServices />
+      <HRCard />
       <HomeProjects />
       <TechStack />
       <Process />

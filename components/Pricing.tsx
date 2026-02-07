@@ -82,8 +82,7 @@ const Pricing: React.FC = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
 
             <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
-              <div className="w-16 h-16 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 border border-blue-500/20 shrink-0 transform group-hover:scale-110 transition-transform duration-500">
-                <Check size={32} />
+              <div className="w-6 h-6 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 border border-blue-500/20 shrink-0 transform group-hover:scale-110 transition-transform duration-500">
               </div>
               <div className="space-y-3">
                 <h3 className="text-3xl md:text-4xl font-black text-white uppercase font-heading tracking-tight leading-none">

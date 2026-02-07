@@ -101,58 +101,58 @@ const Hero: React.FC = () => {
     <section
       ref={heroRef}
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-28 overflow-hidden text-white"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 overflow-hidden text-white"
     >
       {/* Glow background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 -left-32 w-96 h-96 bg-blue-600/30 rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/30 rounded-full blur-[140px]" />
+        <div className="absolute -top-16 sm:-top-24 md:-top-32 -left-16 sm:-left-24 md:-left-32 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-blue-600/30 rounded-full blur-[80px] sm:blur-[100px] md:blur-[140px]" />
+        <div className="absolute bottom-0 right-0 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-indigo-600/30 rounded-full blur-[80px] sm:blur-[100px] md:blur-[140px]" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
         <h1
           ref={titleRef}
-          className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-tight"
         >
           {COMPANY_NAME}
         </h1>
 
         <p
           ref={subtitleRef}
-          className="mt-6 text-lg md:text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed"
+          className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed"
         >
           {TAGLINE}
         </p>
 
         <div
           ref={buttonsRef}
-          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
         >
           <a
             href="#about"
-            className="px-8 py-4 rounded-xl font-semibold
+            className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold
               bg-gradient-to-r from-blue-500 to-indigo-500
               shadow-lg shadow-blue-500/30
               hover:shadow-indigo-500/40 transition-all
-              flex items-center gap-2"
+              flex items-center justify-center gap-2 text-sm sm:text-base"
           >
             Get Started
-            <ArrowRight size={18} />
+            <ArrowRight size={16} className="sm:size-18" />
           </a>
 
           <a
             href="#services"
-            className="px-8 py-4 rounded-xl font-semibold
+            className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold
               border border-white/30 bg-white/10 backdrop-blur-md
-              hover:bg-white/20 transition-all"
+              hover:bg-white/20 transition-all text-sm sm:text-base"
           >
             Our Services
           </a>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-60">
-        <ChevronDown size={28} />
+      <div className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 opacity-60">
+        <ChevronDown size={7} className="sm:size-8" />
       </div>
     </section>
   );
